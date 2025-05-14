@@ -31,13 +31,10 @@ fashion-cat.json – Contains product category labels (multi-label).
 | **Image URL**    | Direct URL to product images                                          |
 
 **2.3 Data Processing**
-Removed the broad category "Apparel & Accessories" to improve distinctiveness.
-
-Extracted scene-product relationships to build the graph.
-
-Normalized product embeddings.
-
-One-hot encoded product categories.
+- Removed the broad category "Apparel & Accessories" to improve distinctiveness.
+- Extracted scene-product relationships to build the graph.
+- Normalized product embeddings.
+- One-hot encoded product categories.
 
 **3. Feature Engineering**
 
