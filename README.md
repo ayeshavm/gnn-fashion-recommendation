@@ -57,20 +57,15 @@ Total Edges: 72,198 (All relationship types)
 
 
 **4. Exploratory Data Analysis (EDA)**
-Plotted product category distribution.
+- Plotted product category distribution.
+- Visualized scene-product co-occurrence.
+- Analyzed bounding box coverage for localization accuracy.
+- Applied PCA and t-SNE to explore product embedding space.
 
-Visualized scene-product co-occurrence.
-
-Analyzed bounding box coverage for localization accuracy.
-
-Applied PCA and t-SNE to explore product embedding space.
-
-🔍 Key Findings
-Product categories were imbalanced, a few categories dominated.
-
-Category-based edges led to over-similarity in embeddings.
-
-Scene-based edges introduced better diversity.
+**🔍 Key Findings**
+- Product categories were imbalanced, a few categories dominated.
+- Category-based edges led to over-similarity in embeddings.
+- Scene-based edges introduced better diversity.
 
 **5. Modeling & Hyperparameter Tuning**
 We trained a Graph Attention Network (GAT) using PyTorch Geometric (PyG).
@@ -81,30 +76,24 @@ Graph Attention Networks dynamically assign weights to neighboring nodes using a
 **5.2 Model Architecture**
 2-layer GAT with residual connections
 
-Dropout: 0.3 to reduce overfitting
+*Dropout:* 0.3 to reduce overfitting
+*Loss Function:* Contrastive Loss to promote meaningful separation
 
-Loss Function: Contrastive Loss to promote meaningful separation
-
-📉 Contrastive Loss
+**📉 Contrastive Loss**
 Encourages similar products to cluster in embedding space while pushing apart dissimilar products — leading to clearer, structured recommendation boundaries.
 
 **6. Evaluation**
 Since this is an unsupervised model, we used custom metrics:
 
-📉 Loss Curve: Tracked contrastive loss over training
+- Loss Curve: Tracked contrastive loss over training
+- K-Means + PCA: Verified clustering of similar products
+- Cosine Similarity: Measured product alignment
+- Top-5 Recommendations: Visually inspected retrievals
 
-🔍 K-Means + PCA: Verified clustering of similar products
-
-🤝 Cosine Similarity: Measured product alignment
-
-🧠 Top-5 Recommendations: Visually inspected retrievals
-
-🚨 Observations
-Cosine similarity scores were too high (~0.999) → Over-smoothing
-
-Embedding clusters overlapped → Poor class separation
-
-Scene-based edges added helpful variance
+**🚨 Observations**
+- Cosine similarity scores were too high (~0.999) → Over-smoothing
+- Embedding clusters overlapped → Poor class separation
+- Scene-based edges added helpful variance
 
 **7. Results & Summary**
 Model successfully learned structure in product-scene relationships.
@@ -113,23 +102,17 @@ Scene edges improved the variety of recommendations.
 
 K-Means clustering revealed latent structure.
 
-⚠️ Limitations
-High cosine similarity (~0.999) suggests over-smoothing
-
-Some product distinctions were lost
-
-Final cosine similarity score: 1.9299 → Needs reduction
+**⚠️ Limitations**
+- High cosine similarity (~0.999) suggests over-smoothing
+- Some product distinctions were lost
+- Final cosine similarity score: 1.9299 → Needs reduction
 
 **8. Future Work**
-🔁 Replace GAT with GraphSAGE to reduce over-smoothing
-
-🧪 Switch to Triplet or InfoNCE Loss for more effective separation
-
-🔍 Improve Edge Features using BERT/CLIP-based text/image similarity
-
-📦 Use Larger Dataset to enhance graph variety
-
-🧭 Integrate YOLO Object Detection for fine-grained image-based edges
+- Replace GAT with GraphSAGE to reduce over-smoothing
+- Switch to Triplet or InfoNCE Loss for more effective separation
+- Improve Edge Features using BERT/CLIP-based text/image similarity
+- Use Larger Dataset to enhance graph variety
+- Integrate YOLO Object Detection for fine-grained image-based edges
 
 **✨ Final Takeaway**
 If a user pins a product on Pinterest, our GNN-based model can recommend items that are visually and categorically aligned, with room to improve distinctiveness and control embedding smoothness.
