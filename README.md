@@ -10,7 +10,8 @@ In this project, we build a Graph Neural Network (GNN) that learns product relat
 **2. Data**
 The dataset used in this project is based on the Pinterest Fashion Data, which includes product metadata, images, and scene-product relationships.
 
-Citation:
+**Citation:**
+
 Wang-Cheng Kang, Eric Kim, Jure Leskovec, Charles Rosenberg, Julian McAuley (2019).
 Complete the Look: Scene-based Complementary Product Recommendation.
 In Proceedings of CVPR 2019.
@@ -39,8 +40,9 @@ Normalized product embeddings.
 One-hot encoded product categories.
 
 **3. Feature Engineering**
-3.1 Node Features
-Category Vector: One-hot encoding of product categories.
+
+**3.1 Node Features**
+- Category Vector: One-hot encoding of product categories.
 
 **3.2 Graph Edges**
 | **Edge Type**                                    | **Description**                                              |
@@ -51,9 +53,8 @@ Category Vector: One-hot encoding of product categories.
 | **Scene ↔ Scene**                                | Connects scenes with overlapping products.                  |
 
 **3.3 Graph Stats**
-Total Nodes: 67,549 (Products + Scenes)
-
-Total Edges: 72,198 (All relationship types)
+- Total Nodes: 67,549 (Products + Scenes)
+- Total Edges: 72,198 (All relationship types)
 
 
 **4. Exploratory Data Analysis (EDA)**
