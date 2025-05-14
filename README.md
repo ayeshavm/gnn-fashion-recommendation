@@ -1,4 +1,4 @@
-👗 Graph Neural Networks for Fashion Product Recommendations
+### 👗 Graph Neural Networks for Fashion Product Recommendations
 
 **1. Introduction**
 Fashion discovery on platforms like Pinterest thrives on recommendation systems that help users find relevant products based on visual and contextual cues.
@@ -96,11 +96,9 @@ Since this is an unsupervised model, we used custom metrics:
 - Scene-based edges added helpful variance
 
 **7. Results & Summary**
-Model successfully learned structure in product-scene relationships.
-
-Scene edges improved the variety of recommendations.
-
-K-Means clustering revealed latent structure.
+- Model successfully learned structure in product-scene relationships.
+- Scene edges improved the variety of recommendations.
+- K-Means clustering revealed latent structure.
 
 **⚠️ Limitations**
 - High cosine similarity (~0.999) suggests over-smoothing
